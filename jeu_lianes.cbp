@@ -35,6 +35,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="lianes.h" />
+		<Unit filename="listeDouble.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="listeDouble.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
