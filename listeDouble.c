@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "listeDouble.h"
-
-
 //initListe ne fait pas de malloc, juste une initialisation à NULL du pointeur de liste
 void initListe(T_liste *l){
 *l=NULL;

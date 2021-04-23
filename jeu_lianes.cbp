@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="interface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="interface.h" />
 		<Unit filename="lianes.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -39,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="listeDouble.h" />
+		<Unit filename="listeDouble_addenda.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="listeDouble_addenda.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,6 +1,8 @@
 #ifndef LISTEDOUBLE_H_INCLUDED
 #define LISTEDOUBLE_H_INCLUDED
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 typedef struct T_cell{
