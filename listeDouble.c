@@ -58,4 +58,45 @@ void ajoutEnTetePtr2Ptr(T_liste *l, int mydata){
     //on modifie l'adresse de la tête de la liste, soit le contenu pointé par l
     *l=nouv;
 };
-//A vous la suite
+
+T_liste ajoutEnFin(T_liste l, int mydata){
+    T_liste nouv = (T_liste)malloc(sizeof(struct T_cell));
+    nouv->pdata = (int*)malloc(sizeof(int));
+    *(nouv->pdata)=mydata;
+
+    while (suiv != NULL) // on cherche la dernière cellule de la liste
+    {
+        l = suiv;
+    }
+
+    // on crée la nouvelle cellule rattachée à la derniere cellule de l
+    nouv->suiv = NULL;
+    nouv->prec = l;
+    l->suiv = nouv;
+
+    return nouv;
+};
+
+T_liste ajoutEnN(T_liste l, int pos, int mydata)
+{
+    T_liste nouv = (T_liste)malloc(sizeof(struct T_cell));
+    nouv->pdata = (int*)malloc(sizeof(int));
+    *(nouv->pdata)=mydata;
+
+    //recherche de la nième cellule
+    T_liste = lprec
+    int count = 1;
+    for (count to (pos - 1), count++)
+    {
+        l = suiv;
+        lprec = prec;
+    }
+
+    // on crée la nouvelle cellule rattachée aux autres
+    nouv->suiv = l;
+    nouv->prec = lprec;
+    lprec->suiv = nouv;
+    l->prec = nouv;
+
+    return nouv;
+}

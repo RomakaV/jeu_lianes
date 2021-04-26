@@ -22,11 +22,11 @@ void afficheListeV1( T_liste l);
 
 T_liste ajoutEnTete(T_liste l, int mydata); //Bien mettre à NULL les champs suiv et prec non utilisés s'il y en a
 void ajoutEnTetePtr2Ptr(T_liste *l, int mydata);
-/* fin de tag ligne 50
+
 T_liste ajoutEnFin(T_liste l, int mydata);
 T_liste ajoutEnN(T_liste l, int pos, int mydata);
 
-T_liste suppEnTete(T_liste l);
+/*T_liste suppEnTete(T_liste l);
 T_liste suppEnFin(T_liste l);
 T_liste suppEnN(T_liste l, int pos);
 
