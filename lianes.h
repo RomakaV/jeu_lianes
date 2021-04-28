@@ -28,5 +28,9 @@ void setX(T_singeV1 m, int val);
 void setY(T_singeV1 m, int val);
 void set_favorites(T_singeV1 m, T_int_list val);
 
+int random_int(int min, int max);
+T_liste generate_liane(T_liste liane);
+T_liste generate_jungle(T_liste jungle, int taille_jungle);
+
 
 #endif

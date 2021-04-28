@@ -64,9 +64,9 @@ T_liste ajoutEnFin(T_liste l, int mydata){
     nouv->pdata = (int*)malloc(sizeof(int));
     *(nouv->pdata)=mydata;
 
-    while (suiv != NULL) // on cherche la dernière cellule de la liste
+    while (l.suiv != NULL) // on cherche la dernière cellule de la liste
     {
-        l = suiv;
+        l = l.suiv;
     }
 
     // on crée la nouvelle cellule rattachée à la derniere cellule de l
@@ -84,7 +84,7 @@ T_liste ajoutEnN(T_liste l, int pos, int mydata)
     *(nouv->pdata)=mydata;
 
     //recherche de la nième cellule
-    T_liste = lprec
+    T_liste lprec;
     int count = 1;
     for (count to (pos - 1), count++)
     {
@@ -97,6 +97,15 @@ T_liste ajoutEnN(T_liste l, int pos, int mydata)
     nouv->prec = lprec;
     lprec->suiv = nouv;
     l->prec = nouv;
+
+    return nouv;
+}
+
+T_liste suppEnTete(T_liste l){
+    T_liste nouv = (T_liste)malloc(sizeof(struct T_cell));
+    nouv->pdata = (int*)malloc(sizeof(int));
+
+    nouv = l.suiv
 
     return nouv;
 }
