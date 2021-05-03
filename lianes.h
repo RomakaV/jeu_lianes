@@ -2,6 +2,7 @@
 #define LIANES_H
 
 #include <stdlib.h>
+#include <time.h>
 #include "listeDouble.h"
 typedef T_liste T_int_list;
 
@@ -10,11 +11,11 @@ typedef T_vine * T_jungle;
 
 typedef struct {
     int id;
-    char nom[10]; //la première lettre du nom sera affiché sur l'IHM version
+    char nom[10]; //la premiÃ¨re lettre du nom sera affichÃ© sur l'IHM version
 
     //console pour indiquer la position du singe sur une liane
-    int posX; //le numéro de la liane où est le singe
-    int posY; //le numéro du point d'accroche sur la liane en question
+    int posX; //le numÃ©ro de la liane oÃ¹ est le singe
+    int posY; //le numÃ©ro du point d'accroche sur la liane en question
 
     T_int_list listeIntPreferes; //liste d'entiers contenant les valeurs des points d'accroches possibles pour ce singe
     // /!\ EST UN POINTEUR
