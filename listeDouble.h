@@ -12,7 +12,7 @@ typedef struct T_cell{
 } T_cellule;
 typedef T_cellule *T_liste;
 
-void initListe(T_liste *l);
+void initListe(T_liste * l);
 bool listeVide( T_liste l);
 
 void afficheListeV1( T_liste l);

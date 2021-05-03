@@ -1,5 +1,7 @@
 #include "lianes.h"
 
+/**Type T_singeV1**/
+
 int getID(T_singeV1 m){return m.id;}
 int getX(T_singeV1 m){return m.posX;}
 int getY(T_singeV1 m){return m.posY;}
@@ -10,22 +12,24 @@ void setX(T_singeV1 m, int val){m.posX = val;}
 void setY(T_singeV1 m, int val){m.posY = val;}
 void set_favorites(T_singeV1 m, T_int_list val){m.listeIntPreferes = val;}
 
-// Fonction de randomisation avec bornes piquée d'un de mes vieux projets perso vive les libraries
-int random_int(int min, int max)
+
+/**Generation de la Jungle**/
+
+
+int random_int(int min_int, int max_int)
 {
+    /**Fonction de randomisation avec bornes piquée d'un de mes vieux projets perso vive les libraries**/
     srand(time(NULL));
-    return min + rand() % (max + 1 - min);
+    return min_int + rand() % (max_int + 1 - min_int);
 };
 
-T_liste generate_liane(T_liste liane)
+T_vine generate_vine(T_liste liane)
 {
     int taille_liane = random_int(4, 10);
     int mydata1 = random_int(0, 9);
     ajoutEnTete(liane, mydata1);
 
-    int i = 2;
-
-    for (i to taille_liane, i++)
+    for (int i=2; i < taille_liane; i++)
     {
         int mydata2 = random_int(0, 9);
         ajoutEnFin(liane, mydata2);
@@ -33,15 +37,19 @@ T_liste generate_liane(T_liste liane)
     return liane;
 }
 
-T_liste generate_jungle(T_liste jungle, int taille_jungle)
+T_jungle generate_jungle(int taille_jungle)
 {
-    for (int i = 1 to taille_liane, i++)
+    T_jungle jungle = malloc(sizeof(T_vine) * taille_jungle);
+
+
+    for (int i = 0; i < taille_jungle; i++)
     {
         T_liste liane;
-        initListe(liane);
-        jungle->pdata = generate_liane(liane);
+        initListe(&liane);
+        jungle[i] = generate_vine(liane);
+
         int mydata = random_int(0, 9);
         ajoutEnFin(liane, mydata);
     }
-    return liane;
+    return jungle;
 }

@@ -15,3 +15,9 @@ T_int_list prompt_favorites(){
 
     return result;
 }
+
+void print_monkey(T_singeV1 m){
+    /**Prints the monkey's coordinates and favourites**/
+    printf("Mokey is on leaf %d of vine %d\n"/*Favourites are :") */,getY(m),getX(m));
+    /*afficheListeV1(get_favorites(m));*/
+}
