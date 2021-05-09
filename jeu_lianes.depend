@@ -1,33 +1,38 @@
 # depslib dependency file v1.0
-1619976907 source:c:\users\erwan\desktop\jeu_lianes-main\interface.c
+1620590989 source:c:\users\erwan\desktop\jeu_lianes-main\interface.c
 	"interface.h"
 
-1619769153 c:\users\erwan\desktop\jeu_lianes-main\interface.h
+1620590711 c:\users\erwan\desktop\jeu_lianes-main\interface.h
 	<stdio.h>
 	"listeDouble.h"
 	"listeDouble_addenda.h"
 	"lianes.h"
 
-1619977607 c:\users\erwan\desktop\jeu_lianes-main\listedouble.h
+1620220049 c:\users\erwan\desktop\jeu_lianes-main\listedouble.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 
-1619977010 c:\users\erwan\desktop\jeu_lianes-main\listedouble_addenda.h
+1620579779 c:\users\erwan\desktop\jeu_lianes-main\listedouble_addenda.h
 	"listeDouble.h"
 
-1620064067 c:\users\erwan\desktop\jeu_lianes-main\lianes.h
+1620590646 c:\users\erwan\desktop\jeu_lianes-main\lianes.h
 	<stdlib.h>
+	<time.h>
 	"listeDouble.h"
 
-1619769153 source:c:\users\erwan\desktop\jeu_lianes-main\main.c
+1620590670 source:c:\users\erwan\desktop\jeu_lianes-main\main.c
 	<stdio.h>
 	<stdlib.h>
+	"listeDouble.h"
+	"listeDouble_addenda.h"
+	"lianes.h"
+	"interface.h"
 
 1619978111 source:c:\users\erwan\desktop\jeu_lianes-main\listedouble.c
 	"listeDouble.h"
 
-1619983727 source:c:\users\erwan\desktop\jeu_lianes-main\listedouble_addenda.c
+1620581540 source:c:\users\erwan\desktop\jeu_lianes-main\listedouble_addenda.c
 	"listeDouble_addenda.h"
 
 1620063974 source:c:\users\erwan\desktop\jeu_lianes-main\lianes.c

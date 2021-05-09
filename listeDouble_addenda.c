@@ -1,10 +1,25 @@
 #include "listeDouble_addenda.h"
 
-void ajoutTrie(T_liste l, int val){
-    ajoutEnTete(l,val);//temporaire
-    /*
+int lengthOfList(T_liste l){
+    /**Returns the length of given list**/
+    int r = 0;
+    while(l != NULL){
+        r++;
+        l = l->suiv;
+    }
+    return r;
+}
 
-    */
+void ajoutTrie(T_liste l, int val){
+    //Ordre croissant
+    int len = lengthOfList(l);
+    for(int i=0; i < len; i++){
+        if(val>*(l->pdata)){
+            l = l->suiv;
+            ajoutEnTete(l,val);
+        }
+        l = l->suiv;
+    }
 }
 
 int getN(T_liste l, int n){

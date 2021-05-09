@@ -9,7 +9,7 @@ T_int_list prompt_favorites(){
         scanf("%d",&ans);
 
         if(ans >= 0 && ans <=10){
-            ajoutTrie(result,ans);///Ajout trié dans la liste
+            ajoutTrie(result,ans);//Ajout trie dans la liste
         }
     }while(ans != -1);
 
@@ -20,4 +20,11 @@ void print_monkey(T_singeV1 m){
     /**Prints the monkey's coordinates and favourites**/
     printf("Mokey is on leaf %d of vine %d\n"/*Favourites are :") */,getY(m),getX(m));
     /*afficheListeV1(get_favorites(m));*/
+}
+
+char * prompt_name(){
+    char * r = malloc(10*sizeof(char));
+    printf("Enter name (10 characters max)");
+    scanf("%c%c%c%c%c%c%c%c%c%c",r,r+1,r+2,r+3,r+4,r+5,r+6,r+7,r+8,r+9);
+    return r;
 }
