@@ -58,6 +58,7 @@ T_vine generate_vine(T_liste liane);
 ///T_jungle
 T_jungle generate_jungle(int taille_jungle);
 //void free_jungle(T_jungle * j);
+jungle_getXY(T_jungle jungle, int x, int y);
 
 ///T_game
 T_game game_alloc(int max_p, int board_size, int vine_size);

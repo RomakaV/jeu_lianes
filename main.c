@@ -20,7 +20,7 @@ int main()
         game_addPlayer(&game, init_monkey(i,0,0, prompt_favorites()));
     }
 
-    print_jungle(game.board);
+    print_jungle(game.board, game.boardSize);
 
     int blocker = 0;
     scanf("%d", &blocker);

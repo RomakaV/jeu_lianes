@@ -22,11 +22,9 @@ void print_monkey(T_singeV1 m){
     afficheListeV1(get_favorites(m));
 }
 
-void print_jungle(T_jungle jungle){
-    T_jungle courant = jungle;
-    while(courant != NULL){
-        afficheListeV1(*(jungle->pdata));
-        courant = courant->suiv;
+void print_jungle(T_jungle jungle, int jungle_size){
+    for(int i = 0; i < jungle_size; i++){
+        afficheListeV1(jungle[i]);
     }
 }
 
