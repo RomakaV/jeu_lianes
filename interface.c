@@ -28,3 +28,17 @@ char * prompt_name(){
     scanf("%c%c%c%c%c%c%c%c%c%c",r,r+1,r+2,r+3,r+4,r+5,r+6,r+7,r+8,r+9);
     return r;
 }
+
+
+
+int prompt_int(char * str){
+    int val = -1;
+    printf("%s",str);
+    scanf("%d",&val);
+    printf("\n");
+    return val;
+}
+
+int prompt_maxPlayers(){return prompt_int("Number of players : ");}
+int prompt_boardSize(){return prompt_int("Number of vines in jungle : ");}
+int prompt_vineSize(){return prompt_int("Number of leafs in vines : ");}
