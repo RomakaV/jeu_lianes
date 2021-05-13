@@ -55,7 +55,6 @@ T_vine generate_vine(T_vine liane){
     }
     return liane;
 }
-
 void free_vine(T_vine l){free_int_list(l);}
 
 
@@ -77,7 +76,6 @@ T_jungle generate_jungle(int taille_jungle){
     }
     return jungle;
 }
-
 void free_jungle(T_jungle l, int nbVines){
     if(l != NULL){
         for(int i = 0; i < nbVines; i++){
@@ -88,10 +86,7 @@ void free_jungle(T_jungle l, int nbVines){
     return;
 }
 
-int jungle_getXY(T_jungle jungle, int x, int y){
-    T_vine courant = jungle[x];
-    return getN(courant, y);
-}
+int jungle_getXY(T_jungle jungle, int x, int y){return getN(jungle[x], y);}
 
 
 /**T_game**/

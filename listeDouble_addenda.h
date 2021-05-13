@@ -9,4 +9,5 @@
 int lengthOfList(T_liste l);
 void ajoutTrie(T_liste l, int val);
 int getN(T_liste l, int n);
+int findInList(T_liste l, int val);
 #endif // LISTEDOUBLE_ADDENDA

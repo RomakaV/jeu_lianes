@@ -54,17 +54,17 @@ int random_int(int min_int, int max_int);
 
 ///T_vine
 T_vine generate_vine(T_liste liane);
-//void free_vine(T_vine v);
+void free_vine(T_vine v);
 //void sort_vine(T_vine v);
 
 ///T_jungle
 T_jungle generate_jungle(int taille_jungle);
-//void free_jungle(T_jungle * j);
+void free_jungle(T_jungle l, int nbVines);
 int jungle_getXY(T_jungle jungle, int x, int y);
 
 ///T_game
 T_game game_alloc(int max_p, int board_size, int vine_size);
-void game_free(T_game g);
+//void game_free(T_game g);
 
 T_singeV1 game_getPlayer(T_game game, int n);
 T_jungle game_getJungle(T_game game);

@@ -7,8 +7,7 @@
 #include "lianes.h"
 #include "interface.h"
 
-int main()
-{
+int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
     printf("Hello world!\n\n");
 
     /*T_singeV1 * player1;
