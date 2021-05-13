@@ -18,8 +18,16 @@ T_int_list prompt_favorites(){
 
 void print_monkey(T_singeV1 m){
     /**Prints the monkey's coordinates and favourites**/
-    printf("Mokey is on leaf %d of vine %d\n"/*Favourites are :") */,getY(m),getX(m));
-    /*afficheListeV1(get_favorites(m));*/
+    printf("Monkey is on leaf %d of vine %d\nFavourites are :",getY(m),getX(m));
+    afficheListeV1(get_favorites(m));
+}
+
+void print_jungle(T_jungle jungle){
+    T_jungle courant = jungle;
+    while(courant != NULL){
+        afficheListeV1(*(jungle->pdata));
+        courant = courant->suiv;
+    }
 }
 
 char * prompt_name(){
@@ -41,4 +49,4 @@ int prompt_int(char * str){
 
 int prompt_maxPlayers(){return prompt_int("Number of players : ");}
 int prompt_boardSize(){return prompt_int("Number of vines in jungle : ");}
-int prompt_vineSize(){return prompt_int("Number of leafs in vines : ");}
+int prompt_vineSize(){return prompt_int("Number of leaves in vines : ");}

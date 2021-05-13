@@ -8,7 +8,7 @@
 typedef T_liste T_int_list;
 
 typedef T_int_list T_vine; // representation d'une liane
-typedef T_vine * T_jungle;
+typedef T_vine* T_jungle;
 
 typedef struct {
     int id;

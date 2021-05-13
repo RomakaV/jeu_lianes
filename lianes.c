@@ -51,7 +51,7 @@ T_vine generate_vine(T_vine liane){
     for (int i=2; i < taille_liane; i++)
     {
         int mydata2 = random_int(0, 9);
-        ajoutEnFin(liane, mydata2);
+        ajoutEnTete(liane, mydata2);
     }
     return liane;
 }
@@ -73,7 +73,7 @@ T_jungle generate_jungle(int taille_jungle){
         jungle[i] = generate_vine(liane);
 
         int mydata = random_int(0, 9);
-        ajoutEnFin(liane, mydata);
+        ajoutEnTete(liane, mydata);
     }
     return jungle;
 }
@@ -103,7 +103,7 @@ T_game game_alloc(int max_p, int board_size, int vine_size){
     game.playerCount = max_p;
 
     game.boardSize = board_size;
-    //game.vineSize = vine_size;
+    game.vineSize = vine_size;
 
     return game;
 }

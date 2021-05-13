@@ -12,7 +12,7 @@ bool listeVide( T_liste l){
 void afficheListeV1( T_liste l){
     T_liste courant = l;
     while (courant!=NULL){
-        printf(" %d ",*(courant->pdata));
+        printf("%d - ",*(courant->pdata));
         courant=courant->suiv;
     }
 };

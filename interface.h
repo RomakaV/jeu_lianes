@@ -17,4 +17,6 @@ int prompt_maxPlayers();
 int prompt_boardSize();
 int prompt_vineSize();
 
+void print_jungle(T_jungle jungle);
+
 #endif // INTERFACE_H
