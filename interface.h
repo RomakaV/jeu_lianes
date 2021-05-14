@@ -5,11 +5,14 @@
 #include "listeDouble.h"
 #include "listeDouble_addenda.h"
 
-#include "lianes.h"
+#include "jungle.h"
+#include "monkey.h"
 
-T_int_list prompt_favorites();
+
 void print_monkey(T_singeV1 m);
 void print_jungle(T_jungle jungle, int jungle_size);
+
+T_int_list prompt_favorites();
 
 int prompt_int(char* str);
 

@@ -31,14 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game.h" />
 		<Unit filename="interface.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="interface.h" />
-		<Unit filename="lianes.c">
+		<Unit filename="jungle.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="lianes.h" />
+		<Unit filename="jungle.h" />
 		<Unit filename="listeDouble.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,6 +54,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="monkey.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monkey.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

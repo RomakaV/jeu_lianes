@@ -10,10 +10,11 @@ bool listeVide( T_liste l){
 };
 
 void afficheListeV1( T_liste l){
-    T_liste courant = l;
-    while (courant!=NULL){
-        printf("%d - ",*(courant->pdata));
-        courant=courant->suiv;
+    int index = 0;
+    while (!(listeVide(l))){
+        printf("[%d] : %d\n",index,*(l->pdata));
+        l = l->suiv;
+        index++;
     }
 };
 
@@ -35,7 +36,7 @@ T_liste ajoutEnTete(T_liste l, int mydata){
         l->prec = nouv;
     }
     return nouv;
-};
+}
 
 //dans cette version "l" est un pointeur sur le pointeur de la 1ere cellule.
 void ajoutEnTetePtr2Ptr(T_liste *l, int mydata){

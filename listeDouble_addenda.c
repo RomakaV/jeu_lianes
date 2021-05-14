@@ -1,5 +1,15 @@
 #include "listeDouble_addenda.h"
 
+/**Type T_int_list**/
+void free_int_list(T_int_list l){
+    while(l != NULL){
+        l = suppEnTete(l);
+    }
+
+    free(l);
+}
+
+
 int lengthOfList(T_liste l){
     /**Returns the length of given list**/
     int r = 0;

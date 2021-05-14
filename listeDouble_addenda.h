@@ -6,6 +6,10 @@
 /***************************************/
 
 #include "listeDouble.h"
+
+typedef T_liste T_int_list;
+void free_int_list(T_int_list);
+
 int lengthOfList(T_liste l);
 void ajoutTrie(T_liste l, int val);
 int getN(T_liste l, int n);

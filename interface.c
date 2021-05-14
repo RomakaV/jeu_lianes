@@ -1,5 +1,21 @@
 #include "interface.h"
 
+///Prints
+void print_monkey(T_singeV1 m){
+    /**Prints the monkey's coordinates and favourites**/
+    printf("Monkey is on leaf %d of vine %d\nFavourites are :",getY(m),getX(m));
+    afficheListeV1(get_favorites(m));
+}
+
+void print_jungle(T_jungle jungle, int jungle_size){
+    for(int i = 0; i < jungle_size; i++){
+        printf("--Vine %d\n",i);
+        afficheListeV1(jungle[i]);
+    }
+    printf("End of jungle");
+}
+
+///Prompts
 T_int_list prompt_favorites(){
     T_int_list result = NULL;
 
@@ -16,19 +32,6 @@ T_int_list prompt_favorites(){
     return result;
 }
 
-void print_monkey(T_singeV1 m){
-    /**Prints the monkey's coordinates and favourites**/
-    printf("Monkey is on leaf %d of vine %d\nFavourites are :",getY(m),getX(m));
-    afficheListeV1(get_favorites(m));
-}
-
-void print_jungle(T_jungle jungle, int jungle_size){
-    for(int i = 0; i < jungle_size; i++){
-        afficheListeV1(jungle[i]);
-    }
-}
-
-
 int prompt_int(char * str){
     int val = -1;
     printf("%s",str);
@@ -37,9 +40,27 @@ int prompt_int(char * str){
     return val;
 }
 
-int prompt_maxPlayers(){return prompt_int("Number of players : ");}
-int prompt_boardSize(){return prompt_int("Number of vines in jungle : ");}
-int prompt_vineSize(){return prompt_int("Number of leaves in vines : ");}
+int prompt_maxPlayers(){
+    int ans = -1;
+    do{
+        ans = prompt_int("Number of players : ");
+    }while(ans<0);
+    return ans;
+}
+int prompt_boardSize(){
+    int ans = -1;
+    do{
+        ans = prompt_int("Number of vines in jungle : ");
+    }while(ans<=0);
+    return ans;
+}
+int prompt_vineSize(){
+    int ans = -1;
+    do{
+        ans = prompt_int("Number of leaves in vines : ");
+    }while(ans<=0);
+    return ans;
+}
 
 char * prompt_name(){
     char * r = malloc(10*sizeof(char));
