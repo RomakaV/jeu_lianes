@@ -12,7 +12,6 @@
 #include "interface.h"
 
 int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
-
     srand(time(NULL));
 
     T_game game = game_alloc(prompt_maxPlayers(),prompt_boardSize());
@@ -27,13 +26,15 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
         game_addPlayer(&game, init_monkey(0,0,0, game_generateRandomFavorites()));
     }
 
+    ///Placer les singes sur un chiffre appropire de la premiere vigne
+
     do{
-        print_jungle(game.board);
+        print_jungle(game_getJungle(game));
 
 
 
 
-    }while(game.gameState = 0);
+    }while(game.gameState == 0);
 
     int blocker = 0;
     scanf("%d", &blocker);

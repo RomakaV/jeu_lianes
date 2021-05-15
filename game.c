@@ -11,8 +11,6 @@ T_game game_alloc(int max_p, int board_size){
 
     game.playerCount = max_p;
 
-    game.boardSize = board_size;
-
     game.gameState = 0;
 
     return game;
@@ -26,9 +24,9 @@ void game_free(T_game game){
 
 ///Game get
 T_singeV1 game_getPlayer(T_game game, int n){return *(game.players[n]);}
-T_jungle game_getJungle(T_game game){return game.board;}
+T_jungle game_getJungle(T_game game){return *game.board;}
 int game_getPlayerCount(T_game game){return game.playerCount;}
-int game_getJungleSize(T_game game){return game.boardSize;}
+int game_getJungleSize(T_game game){return jungle_getLength(*game.board);}
 
 
 ///Game set
@@ -59,4 +57,3 @@ void game_deletePlayer(T_game * game, int n){
 
 //void game_setJungle(T_game * game, T_jungle * j){}
 void game_setplayerCount(T_game * game, int i){game->playerCount = i;}
-void game_setJungleSize(T_game * game, int i){game->boardSize = i;}

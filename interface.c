@@ -7,14 +7,22 @@ void print_monkey(T_singeV1 m){
     afficheListeV1(get_favorites(m));
 }
 
+void print_vine(T_vine vine){
+    printf("-Length = %d",lengthOfList(vine));
+    afficheListeV1(vine);
+}
+
 void print_jungle(T_jungle jungle){
     int i = 0;
+    //jungle = jungle->next;
     while(jungle != NULL){
-        printf("--Vine %d\n",i);
-        afficheListeV1(jungle->vine);
+        T_vine * vine = jungle->vine;
+        printf("--Vine %d | %d\n",i,(jungle->vine));
+        print_vine(*vine);
+        jungle = jungle->next;
         i++;
     }
-    printf("End of jungle");
+    printf("End of jungle\n");
 }
 
 ///Prompts

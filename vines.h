@@ -12,7 +12,7 @@ typedef T_int_list T_vine; // representation d'une liane
 int random_int(int min_int, int max_int);
 
 ///T_vine
-T_vine generate_vine();
+T_vine * generate_vine();
 void free_vine(T_vine v);
 
 void vine_addLeaf(T_vine * v, int val);
