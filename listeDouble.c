@@ -2,7 +2,7 @@
 //initListe ne fait pas de malloc, juste une initialisation à NULL du pointeur de liste
 void initListe(T_liste *l){
 *l=NULL;
-}
+};
 
 
 bool listeVide( T_liste l){
@@ -36,7 +36,7 @@ T_liste ajoutEnTete(T_liste l, int mydata){
         l->prec = nouv;
     }
     return nouv;
-}
+};
 
 //dans cette version "l" est un pointeur sur le pointeur de la 1ere cellule.
 void ajoutEnTetePtr2Ptr(T_liste *l, int mydata){
@@ -100,7 +100,7 @@ T_liste ajoutEnN(T_liste l, int pos, int mydata)
     l->prec = nouv;
 
     return nouv;
-}
+};
 
 T_liste suppEnTete(T_liste l){
     T_liste nouv = (T_liste)malloc(sizeof(struct T_cell));
@@ -109,4 +109,4 @@ T_liste suppEnTete(T_liste l){
     nouv = l->suiv;
 
     return nouv;
-}
+};

@@ -27,7 +27,13 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
         game_addPlayer(&game, init_monkey(0,0,0, game_generateRandomFavorites()));
     }
 
-    print_jungle(game.board);
+    do{
+        print_jungle(game.board);
+
+
+
+
+    }while(game.gameState = 0);
 
     int blocker = 0;
     scanf("%d", &blocker);

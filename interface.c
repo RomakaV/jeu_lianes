@@ -8,7 +8,7 @@ void print_monkey(T_singeV1 m){
 }
 
 void print_jungle(T_jungle jungle){
-    int i =0;
+    int i = 0;
     while(jungle != NULL){
         printf("--Vine %d\n",i);
         afficheListeV1(jungle->vine);

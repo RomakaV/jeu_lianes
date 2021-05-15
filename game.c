@@ -13,6 +13,8 @@ T_game game_alloc(int max_p, int board_size){
 
     game.boardSize = board_size;
 
+    game.gameState = 0;
+
     return game;
 }
 
