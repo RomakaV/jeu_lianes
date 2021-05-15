@@ -63,3 +63,38 @@ char * prompt_name(){
     scanf("%c%c%c%c%c%c%c%c%c%c",r,r+1,r+2,r+3,r+4,r+5,r+6,r+7,r+8,r+9);
     return r;
 }
+
+void prompt_playerAction(T_singeV1 singe){
+    printf("Choose an action :\n1 : Go up\n2 : Go in front\n3 : Go down (one leaf)\n4 : Go down (two leaves)\n5 : Summon Donkey Kong");
+    int action = 0;
+
+    switch (scanf("%d",&action)){
+        case 1:
+            printf("You went up");
+            setX(singe, singe.posX + 1);
+            setY(singe, singe.posY - 1);
+            break;
+        case 2:
+            printf("You went in front");
+            setX(singe, singe.posX + 1);
+            break;
+        case 3:
+            printf("You went down one leaf");
+            setX(singe, singe.posX + 1);
+            setY(singe, singe.posY + 1);
+            break;
+        case 4:
+            printf("You went down two leaves");
+            setX(singe, singe.posX + 1);
+            setY(singe, singe.posY + 2);
+            break;
+        case 5:
+            printf("You summonned Donkey Kong ! He sorted the leaves for you !");
+            /* Fonction donkey kong à faire*/
+            break;
+        default:
+            printf("This is not an action, try again");
+            prompt_playerAction(singe);
+            break;
+        }
+};

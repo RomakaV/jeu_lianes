@@ -21,4 +21,5 @@ int prompt_boardSize();
 int prompt_vineSize();
 
 char * prompt_name();
+void prompt_playerAction(T_singeV1 singe);
 #endif // INTERFACE_H

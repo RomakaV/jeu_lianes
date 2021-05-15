@@ -24,16 +24,20 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
 
     if(game_getPlayerCount(game) == 0){
         printf("No player, the AI will play!\n");
-        game_addPlayer(&game, init_monkey(0,0,0, game_generateRandomFavorites()));
+        game_addPlayer(&game, init_monkey(0,0,0, generateRandomFavorites()));
     }
 
     do{
         print_jungle(game.board);
+        for(int i = 1; i < game.playerCount; i++){
+            prompt_playerAction(getN(game.players, 1);
+        }
 
 
 
 
-    }while(game.gameState = 0);
+
+    }while(game.gameState == 0);
 
     int blocker = 0;
     scanf("%d", &blocker);

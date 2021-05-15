@@ -38,7 +38,7 @@ T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe){
 
 }
 
-T_int_list game_generateRandomFavorites(){
+T_int_list generateRandomFavorites(){
     T_int_list result = NULL;
     int ans = -1;
     for(int i = 0; i < 5; i++){
