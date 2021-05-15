@@ -37,3 +37,16 @@ T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe){
     return validLeafList;
 
 }
+
+T_int_list game_generateRandomFavorites(){
+    T_int_list result = NULL;
+    int ans = -1;
+    for(int i = 0; i < 5; i++){
+        ans = random_int(0, 9);
+        if(findInList(result,ans) == (-1)){//n'est pas deja dans la liste
+            ajoutTrie(result,ans);//Ajout trie dans la liste
+        }
+    }
+
+    return result;
+}

@@ -23,7 +23,8 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
 
 
     if(game_getPlayerCount(game) == 0){
-        //jeu auto
+        printf("No player, the AI will play!\n");
+        game_addPlayer(&game, init_monkey(0,0,0, game_generateRandomFavorites()));
     }
 
     print_jungle(game.board);
