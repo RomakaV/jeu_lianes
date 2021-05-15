@@ -13,6 +13,8 @@
 
 int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement
 
+    srand(time(NULL));
+
     T_game game = game_alloc(prompt_maxPlayers(),prompt_boardSize());
     for(int i = 0; i < game_getPlayerCount(game); i++){
         game_addPlayer(&game, init_monkey(i,0,0, prompt_favorites()));

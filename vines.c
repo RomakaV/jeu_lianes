@@ -2,7 +2,7 @@
 
 int random_int(int min_int, int max_int){
     /**Fonction de randomisation avec bornes piquée d'un de mes vieux projets perso vive les libraries**/
-    //srand(time(NULL));
+
     return min_int + rand() % (max_int + 1 - min_int);
 }
 

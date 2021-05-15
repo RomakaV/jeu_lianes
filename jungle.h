@@ -16,7 +16,7 @@ typedef struct T_jungle_cell{
 
 ///T_jungle
 T_jungle generate_jungle(int taille_jungle);
-void free_jungle(T_jungle * l, int nbVines);
+void free_jungle(T_jungle jungle, int nbVines);
 
 int jungle_getXY(T_jungle jungle, int x, int y);
 

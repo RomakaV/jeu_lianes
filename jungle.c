@@ -10,14 +10,14 @@ T_jungle generate_jungle(int taille_jungle){
     return jungle;
 }
 
-void free_jungle(T_jungle * l, int nbVines){
-    /*if(l != NULL){
+void free_jungle(T_jungle jungle, int nbVines){
+    if(jungle != NULL){
         for(int i = 0; i < nbVines; i++){
-            free_vine(l[i]);
+            free_vine(getN(jungle, i));
         }
-        free(l);
+        free(jungle);
     }
-    return;*/
+    return;
 }
 
 int jungle_getXY(T_jungle jungle, int x, int y){return getN(*jungle_getN(jungle, x), y);}
