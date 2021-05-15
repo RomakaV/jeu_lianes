@@ -58,6 +58,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="monkey.h" />
+		<Unit filename="vines.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vines.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

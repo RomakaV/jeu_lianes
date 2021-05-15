@@ -7,10 +7,12 @@ void print_monkey(T_singeV1 m){
     afficheListeV1(get_favorites(m));
 }
 
-void print_jungle(T_jungle jungle, int jungle_size){
-    for(int i = 0; i < jungle_size; i++){
+void print_jungle(T_jungle jungle){
+    int i =0;
+    while(jungle != NULL){
         printf("--Vine %d\n",i);
-        afficheListeV1(jungle[i]);
+        afficheListeV1(jungle->vine);
+        i++;
     }
     printf("End of jungle");
 }
@@ -51,13 +53,6 @@ int prompt_boardSize(){
     int ans = -1;
     do{
         ans = prompt_int("Number of vines in jungle : ");
-    }while(ans<=0);
-    return ans;
-}
-int prompt_vineSize(){
-    int ans = -1;
-    do{
-        ans = prompt_int("Number of leaves in vines : ");
     }while(ans<=0);
     return ans;
 }

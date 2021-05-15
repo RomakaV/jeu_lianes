@@ -1,0 +1,23 @@
+#include "vines.h"
+
+int random_int(int min_int, int max_int){
+    /**Fonction de randomisation avec bornes piquée d'un de mes vieux projets perso vive les libraries**/
+    //srand(time(NULL));
+    return min_int + rand() % (max_int + 1 - min_int);
+}
+
+T_vine generate_vine(){
+    T_vine vine = NULL;
+    int length = random_int(5,10);
+
+    for (int i=0; i < length; i++){
+        vine = ajoutEnTete(vine, random_int(0, 9));
+    }
+    return vine;
+}
+
+void free_vine(T_vine l){free_int_list(l);}
+
+void vine_addLeaf(T_vine * v, int val){
+    *v = ajoutEnTete(v,val);
+}

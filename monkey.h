@@ -34,4 +34,5 @@ void setID(T_singeV1 m, int val);
 void setX(T_singeV1 m, int val);
 void setY(T_singeV1 m, int val);
 void set_favorites(T_singeV1 m, T_int_list val);
+T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe);
 #endif

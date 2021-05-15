@@ -20,3 +20,20 @@ void setID(T_singeV1 m, int val){m.id = val;}
 void setX(T_singeV1 m, int val){m.posX = val;}
 void setY(T_singeV1 m, int val){m.posY = val;}
 void set_favorites(T_singeV1 m, T_int_list val){m.listeIntPreferes = val;}
+/*
+T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe){
+    T_liste validLeafList = (T_liste)malloc(sizeof(struct T_cell));
+    T_vine targetVine = jungle[singe.posX + 1];
+    int minRange = singe.posY - 1;
+    int maxRange = singe.posY + 2;
+
+    for (int i = minRange; i <= maxRange; i++){
+        int nodeValue = getN(targetVine, i);
+        if (findInList(singe.listeIntPreferes, nodeValue) != -1){
+            ajoutEnTete(validLeafList, i);
+        }
+
+    }
+    return validLeafList;
+
+}*/

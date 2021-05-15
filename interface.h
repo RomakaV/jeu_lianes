@@ -10,7 +10,7 @@
 
 
 void print_monkey(T_singeV1 m);
-void print_jungle(T_jungle jungle, int jungle_size);
+void print_jungle(T_jungle jungle);
 
 T_int_list prompt_favorites();
 
