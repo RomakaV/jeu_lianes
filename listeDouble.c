@@ -11,7 +11,7 @@ bool listeVide( T_liste l){
 
 void afficheListeV1( T_liste l){
     int index = 0;
-    while (!(listeVide(l))){
+    while (l != NULL){
         printf("[%d] : %d\n",index,*(l->pdata));
         l = l->suiv;
         index++;

@@ -10,11 +10,9 @@
 
 typedef struct{
     T_singeV1 ** players;//Tableau de pointeurs de joueurs
-    T_jungle board;
+    T_jungle * board;
 
     int playerCount;
-
-    int boardSize;
 
     int gameState; //0 : running / 1 : plouf / 2 : ggwp
 } T_game;
