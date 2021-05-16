@@ -27,6 +27,7 @@ T_singeV1 game_getPlayer(T_game game, int n){return *(game.players[n]);}
 T_jungle game_getJungle(T_game game){return *game.board;}
 int game_getPlayerCount(T_game game){return game.playerCount;}
 int game_getJungleSize(T_game game){return jungle_getLength(*game.board);}
+int game_getState(T_game game){return game.gameState;}
 
 
 ///Game set
@@ -61,7 +62,7 @@ void game_setplayerCount(T_game * game, int i){game->playerCount = i;}
 
 int checkMonkeyState(T_game game, T_singeV1 singe){
     if(findValidLeaf(game_getJungle(game), singe) == NULL){
-        printf("plouf");
+        printf("Player %d : plouf\n", getID(singe));
         return -1; //plouf
     }
     else if(getX(singe) == game_getJungleSize(game)){
@@ -69,6 +70,19 @@ int checkMonkeyState(T_game game, T_singeV1 singe){
     }
     else{
         return 0; //toujours en jeu
+    }
+}
+
+int game_checkState(T_game game){
+    int state = 0;
+    for(int i = 0; i < game_getPlayerCount(game); i++){
+        if(checkMonkeyState(game, game_getPlayer(game, i)) == 1){
+            state = 1;
+        }
+        if(game_getPlayerCount(game) == 0){
+            state = -1;
+        }
+        return state;
     }
 }
 

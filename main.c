@@ -17,6 +17,9 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
     }else{
 
         ///Placer les singes sur un chiffre appropire de la premiere vigne
+        for (int i = 0; i < game_getPlayerCount(game); i++){
+            setXY(*game_getPlayer(game, i),0,0);
+        }
 
         do{
             for(int i = 0; i < game_getPlayerCount(game); i++){
@@ -29,6 +32,8 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
                     print_jungle(game_getJungle(game));
                     action = prompt_playerAction(player);
                 }while(action < 1 && action > 5);
+
+                scanf("%d\n", &action);
 
                 switch (action){
                     case 1:
@@ -55,15 +60,25 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
                         printf("Error : Unintented input !\n");
                         break;
                 }
-                scanf("%d\n",&action);
+
 
                 if(checkMonkeyState(game, game_getPlayer(game, i)) == -1){
                     game_deletePlayer(&game, i);
                 }
             }
 
-            //check state a mettre ici
+            game.gameState = game_checkState(game);
         }while(game.gameState == 0); //0 = running / numéro : ID du vainqueur / -1 : personne gagne
+    }
+
+    int winner = -1;
+
+    if (game_getState(game) == 1){
+        for(int i = 0; i < game_getPlayerCount(game); i++){
+            if(checkMonkeyState(game, game_getPlayer(game, i)) == 1){
+            winner = getID(game_getPlayer(game, i));
+        }
+        printf("Player %d won !\n", &winner);
     }
     return 0;
-};
+}

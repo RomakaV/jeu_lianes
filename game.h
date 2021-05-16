@@ -24,6 +24,7 @@ T_game game_alloc(int max_p, int board_size);
 T_singeV1 game_getPlayer(T_game game, int n);
 T_jungle game_getJungle(T_game game);
 int game_getPlayerCount(T_game game);
+int game_getState(T_game game);
 
 void game_addPlayer(T_game * game, T_singeV1 * player);
 void game_removePlayer(T_game * game, int n);
@@ -34,4 +35,5 @@ void game_setplayerCount(T_game * game, int i);
 
 
 int checkMonkeyState(T_game game, T_singeV1 singe);
+int game_checkState(T_game game);
 #endif // GAME_H_INCLUDED
