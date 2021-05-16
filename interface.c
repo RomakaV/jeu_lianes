@@ -8,7 +8,7 @@ void print_monkey(T_singeV1 m){
 }
 
 void print_vine(T_vine vine){
-    printf("-Length = %d",lengthOfList(vine));
+    printf("-Length = %d\n",lengthOfList(vine));
     afficheListeV1(vine);
 }
 
@@ -17,7 +17,7 @@ void print_jungle(T_jungle jungle){
     //jungle = jungle->next;
     while(jungle != NULL){
         T_vine * vine = jungle->vine;
-        printf("--Vine %d | %d\n",i,(jungle->vine));
+        printf("--Vine %d\n",i);
         print_vine(*vine);
         jungle = jungle->next;
         i++;

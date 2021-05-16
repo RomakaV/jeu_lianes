@@ -22,15 +22,15 @@ void vine_addLeaf(T_vine * v, int val){
     *v = ajoutEnTete(*v,val);
 }
 
-void vine_sort(T_vine vine){
+void vine_sort(T_vine * vine){
     T_vine nouv = malloc(sizeof(struct T_cell));
 
     do{
-        ajoutTrie(nouv, vine);
-        vine = vine->suiv;
-    }while(vine->suiv != NULL);
+        ajoutTrie(nouv, *(*vine)->pdata);
+        *vine = (*vine)->suiv;
+    }while((*vine)->suiv != NULL);
 
-    free_vine(vine);
+    free_vine(*vine);
 
-    return nouv;
+    *vine = nouv;
 };

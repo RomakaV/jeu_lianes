@@ -32,32 +32,32 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
 
                 switch (action){
                     case 1:
-                        printf("You went up");
+                        printf("You went up\n");
                         setXY(&player, getX(player) +1, getY(player) -1);
                         break;
                     case 2:
-                        printf("You went in front");
+                        printf("You went in front\n");
                         setX(&player, getX(player)+1);
                         break;
                     case 3:
-                        printf("You went down one leaf");
+                        printf("You went down one leaf\n");
                         setXY(&player, getX(player) +1, getY(player) +1);
                         break;
                     case 4:
-                        printf("You went down two leaves");
+                        printf("You went down two leaves\n");
                         setXY(&player, getX(player) +1, getY(player) +2);
                         break;
                     case 5:
-                        printf("You summoned Donkey Kong ! He sorted the leaves for you !");
+                        printf("You summoned Donkey Kong ! He sorted the leaves for you !\n");
                         vine_sort(jungle_getN(game_getJungle(game), getX(player)+1));
                         break;
                     default:
-                        printf("Error : Unintented input !");
+                        printf("Error : Unintented input !\n");
                         break;
                 }
-                scanf("%d",&action);
+                scanf("%d\n",&action);
 
-                if(checkMonkeyState(game_getPlayer(game, i)) == -1){
+                if(checkMonkeyState(game, game_getPlayer(game, i)) == -1){
                     game_deletePlayer(&game, i);
                 }
             }

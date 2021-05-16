@@ -31,4 +31,7 @@ void game_deletePlayer(T_game * game, int n);
 
 //void game_setJungle(T_game * game, T_jungle * j);
 void game_setplayerCount(T_game * game, int i);
+
+
+int checkMonkeyState(T_game game, T_singeV1 singe);
 #endif // GAME_H_INCLUDED

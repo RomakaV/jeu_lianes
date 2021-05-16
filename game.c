@@ -57,3 +57,18 @@ void game_deletePlayer(T_game * game, int n){
 
 //void game_setJungle(T_game * game, T_jungle * j){}
 void game_setplayerCount(T_game * game, int i){game->playerCount = i;}
+
+
+int checkMonkeyState(T_game game, T_singeV1 singe){
+    if(findValidLeaf(game_getJungle(game), singe) == NULL){
+        printf("plouf");
+        return -1; //plouf
+    }
+    else if(getX(singe) == game_getJungleSize(game)){
+        return 1; //fini
+    }
+    else{
+        return 0; //toujours en jeu
+    }
+}
+
