@@ -33,31 +33,37 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
                 switch (action){
                     case 1:
                         printf("You went up");
-                        setXY(player, getX(player) +1, getY(player) -1);
+                        setXY(&player, getX(player) +1, getY(player) -1);
                         break;
                     case 2:
                         printf("You went in front");
-                        setX(player, getX(player)+1);
+                        setX(&player, getX(player)+1);
                         break;
                     case 3:
                         printf("You went down one leaf");
-                        setXY(player, getX(player) +1, getY(player) +1);
+                        setXY(&player, getX(player) +1, getY(player) +1);
                         break;
                     case 4:
                         printf("You went down two leaves");
-                        setXY(player, getX(player) +1, getY(player) +2);
+                        setXY(&player, getX(player) +1, getY(player) +2);
                         break;
                     case 5:
-                        printf("You summonned Donkey Kong ! He sorted the leaves for you !");
-                        //vine_sort(jungle_getN(jungle, getX(player)+1));//A coder
+                        printf("You summoned Donkey Kong ! He sorted the leaves for you !");
+                        vine_sort(jungle_getN(game_getJungle(game), getX(player)+1));
                         break;
                     default:
                         printf("Error : Unintented input !");
                         break;
                 }
                 scanf("%d",&action);
+
+                if(checkMonkeyState(game_getPlayer(game, i)) == -1){
+                    game_deletePlayer(&game, i);
+                }
             }
-        }while(game.gameState == 0);
+
+            //check state a mettre ici
+        }while(game.gameState == 0); //0 = running / numéro : ID du vainqueur / -1 : personne gagne
     }
     return 0;
 };

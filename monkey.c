@@ -4,10 +4,10 @@
 
 T_singeV1 * init_monkey(int id, int x, int y, T_int_list favo){
     T_singeV1 * m = malloc(sizeof(T_singeV1));
-    setID(*m,id);
-    setX(*m,x);
-    setY(*m,y);
-    set_favorites(*m,favo);
+    setID(&m,id);
+    setX(&m,x);
+    setY(&m,y);
+    set_favorites(&m,favo);
     return m;
 }
 
@@ -16,11 +16,11 @@ int getX(T_singeV1 m){return m.posX;}
 int getY(T_singeV1 m){return m.posY;}
 T_int_list get_favorites(T_singeV1 m){return m.listeIntPreferes;}
 
-void setID(T_singeV1 m, int val){m.id = val;}
-void setX(T_singeV1 m, int val){m.posX = val;}
-void setY(T_singeV1 m, int val){m.posY = val;}
-void setXY(T_singeV1 m, int x, int y){m.posX = x; m.posY = y;}
-void set_favorites(T_singeV1 m, T_int_list val){m.listeIntPreferes = val;}
+void setID(T_singeV1 * m, int val){m->id = val;}
+void setX(T_singeV1 * m, int val){m->posX = val;}
+void setY(T_singeV1 * m, int val){m->posY = val;}
+void setXY(T_singeV1 * m, int x, int y){m->posX = x; m->posY = y;}
+void set_favorites(T_singeV1  * m, T_int_list val){m->listeIntPreferes = val;}
 
 T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe){
     T_liste validLeafList = (T_liste)malloc(sizeof(struct T_cell));
@@ -50,4 +50,17 @@ T_int_list generateRandomFavorites(){
     }
 
     return result;
+}
+
+int checkMonkeyState(T_game game, T_singeV1 singe){
+    if(findValidLeaf(game_getJungle(game), singe) == NULL){
+        printf("plouf");
+        return -1; //plouf
+    }
+    else if(getX(singe) == game_getJungleSize(game)){
+        return 1; //fini
+    }
+    else{
+        return 0; //toujours en jeu
+    }
 }

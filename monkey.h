@@ -29,14 +29,15 @@ int getID(T_singeV1 m);
 //char[] getName(T_singeV1 m);
 int getX(T_singeV1 m);
 int getY(T_singeV1 m);
-void setXY(T_singeV1 m, int x, int y);
+void setXY(T_singeV1 * m, int x, int y);
 T_int_list get_favorites(T_singeV1 m);
 
-void setID(T_singeV1 m, int val);
+void setID(T_singeV1 * m, int val);
 //void setName(T_singeV1 m, char v);
-void setX(T_singeV1 m, int val);
-void setY(T_singeV1 m, int val);
-void set_favorites(T_singeV1 m, T_int_list val);
+void setX(T_singeV1 * m, int val);
+void setY(T_singeV1 * m, int val);
+void set_favorites(T_singeV1  * m, T_int_list val);
 T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe);
 T_int_list generateRandomFavorites();
+int checkMonkeyState(T_game game, T_singeV1 singe);
 #endif
