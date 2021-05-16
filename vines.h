@@ -17,6 +17,6 @@ void free_vine(T_vine v);
 
 void vine_addLeaf(T_vine * v, int val);
 
-//void sort_vine(T_vine v);
+//void vine_sort(T_vine v);
 
 #endif // VINES_H_INCLUDED
