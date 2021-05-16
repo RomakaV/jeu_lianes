@@ -22,11 +22,11 @@ int lengthOfList(T_liste l){
 
 void ajoutTrie(T_liste l, int val){
     //Ordre croissant
-    int len = lengthOfList(l);
-    for(int i=0; i < len; i++){
+    while(l != NULL){
         if(val>*(l->pdata)){
             l = l->suiv;
             ajoutEnTete(l,val);
+            return;
         }
         l = l->suiv;
     }

@@ -45,7 +45,7 @@ T_vine * jungle_getN(T_jungle jungle, int n){
     int i = 0;
     while(jungle != NULL && i < n){
         jungle = jungle->next;
-        if(jungle == NULL){return -1;}//Index out of range
+        if(jungle == NULL){return NULL;}//Index out of range
         i++;
     }
     if(jungle == NULL){return NULL;}

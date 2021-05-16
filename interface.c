@@ -35,9 +35,11 @@ T_int_list prompt_favorites(){
         scanf("%d",&ans);
 
         if(ans >= 0 && ans <=9 && findInList(result,ans) == (-1)){//Entre 0 et 10, n'est pas deja dans la liste
-            ajoutTrie(result,ans);//Ajout trie dans la liste
+            ajoutEnTete(result,ans);//Ajout trie dans la liste
         }
     }while(ans != -1);
+
+    tri_selection_liste(result);
 
     return result;
 }
