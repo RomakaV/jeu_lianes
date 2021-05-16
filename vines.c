@@ -23,14 +23,5 @@ void vine_addLeaf(T_vine * v, int val){
 }
 
 void vine_sort(T_vine * vine){
-    T_vine nouv = malloc(sizeof(struct T_cell));
-
-    do{
-        ajoutTrie(nouv, *(*vine)->pdata);
-        *vine = (*vine)->suiv;
-    }while((*vine)->suiv != NULL);
-
-    free_vine(*vine);
-
-    *vine = nouv;
+    tri_selection_liste(*vine);
 };

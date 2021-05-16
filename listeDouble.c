@@ -110,3 +110,62 @@ T_liste suppEnTete(T_liste l){
 
     return nouv;
 };
+
+T_liste creerListeNElem( int taille )
+{
+    T_liste l;
+    initListe(&l);
+    srand(time(NULL));
+    for (int i=0; i<taille; i++){
+        l=ajoutEnTete(l,rand()%100);
+    }
+    return l;
+}
+
+void tri_selection(int *tableau, int taille)
+{
+    int en_cours, plus_petit, j, temp;
+
+    for (en_cours = 0; en_cours < taille - 1; en_cours++)
+    {
+        plus_petit = en_cours;
+        for (j = en_cours ; j < taille; j++)
+            if (tableau[j] < tableau[plus_petit])
+                plus_petit = j;
+        temp = tableau[en_cours];
+        tableau[en_cours] = tableau[plus_petit];
+        tableau[plus_petit] = temp;
+    }
+}
+
+void tri_selection_liste(T_liste l)
+{
+    T_liste en_cours, plus_petit, j, fin;  //pointeurs sur cellule donc T_liste
+
+    fin = getptrLastCell (l); //pour ne faire qu'un seul appel de cette fonction en O(n)
+
+    //nous ne faisons ici que des branchements et déplacements de pointeurs
+    for (en_cours = l; en_cours != fin; en_cours=getptrNextCell(en_cours)) //avec "en_cours != fin", nous nous arrêtons bien sur l'avant dernière cellule
+    {
+        plus_petit = en_cours;
+        for (j = en_cours ; j != fin; j=getptrNextCell(j))
+        {
+            if (*getPtrData(j) < *getPtrData(plus_petit) )  //comparaison des contenus pointées (pas des pointeurs directement!)
+                plus_petit = j;  //branchement de "plus_petit" sur la cellule ayant une valeur pointée par data plus petite que celle pointée par plus_petit
+        }
+        //comparaison avec la cellule fin non comparée dans le FOR ci-dessus
+        if (*getPtrData(fin) < *getPtrData(plus_petit) ) plus_petit = fin;
+
+        //swap
+        swapPtrData(en_cours, plus_petit);
+    }
+}
+
+T_liste suppEnTete(T_liste l){
+    T_liste nouv = (T_liste)malloc(sizeof(struct T_cell));
+    nouv->pdata = (int*)malloc(sizeof(int));
+
+    nouv = l->suiv;
+
+    return nouv;
+};
