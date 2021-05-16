@@ -20,6 +20,8 @@ typedef struct {
     // /!\ EST UN POINTEUR
 } T_singeV1;
 
+typedef T_singeV1 T_singe;
+
 ///T_singeV1
 T_singeV1 * init_monkey(int id, int x, int y, T_int_list favo);
 
@@ -27,6 +29,7 @@ int getID(T_singeV1 m);
 //char[] getName(T_singeV1 m);
 int getX(T_singeV1 m);
 int getY(T_singeV1 m);
+void setXY(T_singeV1 m, int x, int y);
 T_int_list get_favorites(T_singeV1 m);
 
 void setID(T_singeV1 m, int val);

@@ -13,14 +13,51 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
     if(game_getPlayerCount(game) == 0){
         printf("No player, the AI will play!\n");
         game_addPlayer(&game, init_monkey(0,0,0, generateRandomFavorites()));
-    }
-    ///Placer les singes sur un chiffre appropire de la premiere vigne
-    do{
-        print_jungle(game_getJungle(game));
-        for(int i = 1; i < game_getPlayerCount(game); i++){
-            prompt_playerAction(game_getPlayer(game, 0));
-        }
+        printf("Not coded yet !");
+    }else{
 
-    }while(game.gameState == 0);
+        ///Placer les singes sur un chiffre appropire de la premiere vigne
+
+        do{
+            for(int i = 0; i < game_getPlayerCount(game); i++){
+
+                T_singe player = game_getPlayer(game,i);
+
+                int action = -1;
+                do{
+                    system("cls");
+                    print_jungle(game_getJungle(game));
+                    action = prompt_playerAction(player);
+                }while(action < 1 && action > 5);
+
+                switch (action){
+                    case 1:
+                        printf("You went up");
+                        setXY(player, getX(player) +1, getY(player) -1);
+                        break;
+                    case 2:
+                        printf("You went in front");
+                        setX(player, getX(player)+1);
+                        break;
+                    case 3:
+                        printf("You went down one leaf");
+                        setXY(player, getX(player) +1, getY(player) +1);
+                        break;
+                    case 4:
+                        printf("You went down two leaves");
+                        setXY(player, getX(player) +1, getY(player) +2);
+                        break;
+                    case 5:
+                        printf("You summonned Donkey Kong ! He sorted the leaves for you !");
+                        //vine_sort(jungle_getN(jungle, getX(player)+1));//A coder
+                        break;
+                    default:
+                        printf("Error : Unintented input !");
+                        break;
+                }
+                scanf("%d",&action);
+            }
+        }while(game.gameState == 0);
+    }
     return 0;
 };

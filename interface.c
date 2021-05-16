@@ -31,10 +31,10 @@ T_int_list prompt_favorites(){
 
     int ans = -1;
     do{
-        printf("Enter an integer your character can grab on (0~10)\nEnter -1 to finish\n");
+        printf("Enter an integer your character can grab on (0~9)\nEnter -1 to finish\n");
         scanf("%d",&ans);
 
-        if(ans >= 0 && ans <=10 && findInList(result,ans) == (-1)){//Entre 0 et 10, n'est pas deja dans la liste
+        if(ans >= 0 && ans <=9 && findInList(result,ans) == (-1)){//Entre 0 et 10, n'est pas deja dans la liste
             ajoutTrie(result,ans);//Ajout trie dans la liste
         }
     }while(ans != -1);
@@ -72,37 +72,4 @@ char * prompt_name(){
     return r;
 }
 
-void prompt_playerAction(T_singeV1 singe){
-    printf("Choose an action :\n1 : Go up\n2 : Go in front\n3 : Go down (one leaf)\n4 : Go down (two leaves)\n5 : Summon Donkey Kong");
-    int action = 0;
-
-    switch (scanf("%d",&action)){
-        case 1:
-            printf("You went up");
-            setX(singe, getX(singe) + 1);
-            setY(singe, getY(singe) - 1);
-            break;
-        case 2:
-            printf("You went in front");
-            setX(singe, getX(singe) + 1);
-            break;
-        case 3:
-            printf("You went down one leaf");
-            setX(singe, getX(singe) + 1);
-            setY(singe, getY(singe) + 1);
-            break;
-        case 4:
-            printf("You went down two leaves");
-            setX(singe, getX(singe) + 1);
-            setY(singe, getY(singe) + 2);
-            break;
-        case 5:
-            printf("You summonned Donkey Kong ! He sorted the leaves for you !");
-            /* Fonction donkey kong à faire*/
-            break;
-        default:
-            printf("This is not an action, try again");
-            prompt_playerAction(singe);
-            break;
-        }
-};
+int prompt_playerAction(T_singeV1 singe){return prompt_int("Choose an action :\n1 : Go up\n2 : Go in front\n3 : Go down (one leaf)\n4 : Go down (two leaves)\n5 : Summon Donkey Kong\n");};
