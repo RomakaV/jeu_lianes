@@ -18,7 +18,8 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
 
         ///Placer les singes sur un chiffre appropire de la premiere vigne
         for (int i = 0; i < game_getPlayerCount(game); i++){
-            setXY(*game_getPlayer(game, i),0,0);
+            T_singe player = game_getPlayer(game, i);
+            setXY(&player,0,0);
         }
 
         do{
@@ -76,9 +77,11 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
     if (game_getState(game) == 1){
         for(int i = 0; i < game_getPlayerCount(game); i++){
             if(checkMonkeyState(game, game_getPlayer(game, i)) == 1){
-            winner = getID(game_getPlayer(game, i));
-        }
-        printf("Player %d won !\n", &winner);
-    }
+                winner = getID(game_getPlayer(game, i));
+            }
+        }
+
+    printf("Player %d won !\n", &winner);
     return 0;
+    }
 }

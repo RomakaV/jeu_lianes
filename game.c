@@ -82,7 +82,7 @@ int game_checkState(T_game game){
         if(game_getPlayerCount(game) == 0){
             state = -1;
         }
-        return state;
     }
+    return state;
 }
 
