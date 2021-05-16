@@ -78,10 +78,19 @@ int main(void){//void pour s'assurer que les scanf fonctionnent parfaitement   
         for(int i = 0; i < game_getPlayerCount(game); i++){
             if(checkMonkeyState(game, game_getPlayer(game, i)) == 1){
                 winner = getID(game_getPlayer(game, i));
+                printf("Player %d won !\n", &winner);
+            }
+        }
+
+    else if (game_getState(game) == -1){
+        for(int i = 0; i < game_getPlayerCount(game); i++){
+            if(checkMonkeyState(game, game_getPlayer(game, i)) == 1){
+                winner = getID(game_getPlayer(game, i));
+                printf("Player %d won !\n", &winner);
             }
         }
 
-    printf("Player %d won !\n", &winner);
+
     return 0;
     }
 }
