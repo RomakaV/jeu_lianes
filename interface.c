@@ -79,22 +79,22 @@ void prompt_playerAction(T_singeV1 singe){
     switch (scanf("%d",&action)){
         case 1:
             printf("You went up");
-            setX(singe, singe.posX + 1);
-            setY(singe, singe.posY - 1);
+            setX(singe, getX(singe) + 1);
+            setY(singe, getY(singe) - 1);
             break;
         case 2:
             printf("You went in front");
-            setX(singe, singe.posX + 1);
+            setX(singe, getX(singe) + 1);
             break;
         case 3:
             printf("You went down one leaf");
-            setX(singe, singe.posX + 1);
-            setY(singe, singe.posY + 1);
+            setX(singe, getX(singe) + 1);
+            setY(singe, getY(singe) + 1);
             break;
         case 4:
             printf("You went down two leaves");
-            setX(singe, singe.posX + 1);
-            setY(singe, singe.posY + 2);
+            setX(singe, getX(singe) + 1);
+            setY(singe, getY(singe) + 2);
             break;
         case 5:
             printf("You summonned Donkey Kong ! He sorted the leaves for you !");
