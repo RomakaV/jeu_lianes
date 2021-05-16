@@ -20,7 +20,7 @@ void setID(T_singeV1 * m, int val){m->id = val;}
 void setX(T_singeV1 * m, int val){m->posX = val;}
 void setY(T_singeV1 * m, int val){m->posY = val;}
 void setXY(T_singeV1 * m, int x, int y){m->posX = x; m->posY = y;}
-void set_favorites(T_singeV1  * m, T_int_list val){m->listeIntPreferes = val;}
+void set_favorites(T_singeV1 * m, T_int_list val){m->listeIntPreferes = val;}
 
 T_liste findValidLeaf(T_jungle jungle, T_singeV1 singe){
     T_liste validLeafList = (T_liste)malloc(sizeof(struct T_cell));

@@ -1,18 +1,19 @@
 #ifndef LISTEDOUBLE_H_INCLUDED
 #define LISTEDOUBLE_H_INCLUDED
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
+#define DEBUG 1 //le mettre à 0 pour supprimer tous les messages d'erreurs (si listeVide, pas de suivant etc).
 
 typedef struct T_cell{
     struct T_cell *suiv;
     struct T_cell *prec;
     int *pdata;              //attention à faire un malloc sur ce champ avant de s'en servir
 } T_cellule;
+
 typedef T_cellule *T_liste;
 
-void initListe(T_liste * l);
+void initListe(T_liste *l);
 bool listeVide( T_liste l);
 
 void afficheListeV1( T_liste l);
@@ -22,14 +23,15 @@ void afficheListeV1( T_liste l);
 
 T_liste ajoutEnTete(T_liste l, int mydata); //Bien mettre à NULL les champs suiv et prec non utilisés s'il y en a
 void ajoutEnTetePtr2Ptr(T_liste *l, int mydata);
-
+/* fin de tag ligne 50
 T_liste ajoutEnFin(T_liste l, int mydata);
 T_liste ajoutEnN(T_liste l, int pos, int mydata);
 
 T_liste suppEnTete(T_liste l);
-/*T_liste suppEnFin(T_liste l);
+T_liste suppEnFin(T_liste l);
 T_liste suppEnN(T_liste l, int pos);
 
+*/
 T_liste getptrFirstCell(T_liste l);
 T_liste getptrLastCell(T_liste l);
 T_liste getptrNextCell(T_liste l);
@@ -37,6 +39,12 @@ T_liste getptrPrevCell(T_liste l);
 int* getPtrData(T_liste l);
 void swapPtrData( T_liste source, T_liste destination );
 
+T_liste creerListeNElem( int taille );
+void tri_selection(int *tableau, int taille);
+void tri_selection_liste(T_liste l);
+T_liste suppEnTete(T_liste l);
+
+/*
 int getNbreCell(T_liste l);
 int getSizeBytes(T_liste l); //utilisation de sizeof
 

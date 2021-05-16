@@ -1,6 +1,9 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
+#include <stdlib.h>
+#include <stdio.h>
+
 #include "listeDouble.h"
 #include "listeDouble_addenda.h"
 

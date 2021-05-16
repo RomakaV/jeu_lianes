@@ -5,6 +5,8 @@
  /** Ici vont les ajouts a listeDouble **/
 /***************************************/
 
+#include <stdlib.h>
+
 #include "listeDouble.h"
 
 typedef T_liste T_int_list;
